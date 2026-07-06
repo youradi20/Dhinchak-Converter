@@ -1,78 +1,144 @@
 # ⚡ Dhinchak Converter
 
-A clean, modern, and minimalist unit converter desktop application built with **Python** and **CustomTkinter**.
+A modern, lightweight, and user-friendly **Unit Converter Desktop Application** built using **Python** and **CustomTkinter**.
+
+Dhinchak Converter provides a clean graphical interface for performing everyday unit conversions with history tracking and persistent storage support.
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python&logoColor=white)
 ![CustomTkinter](https://img.shields.io/badge/UI-CustomTkinter-green)
-![License](https://img.shields.io/badge/License-MIT-yellow)
+![License](https://img.shields.io/badge/License-AGPL--3.0-yellow)
 
 ---
 
-## ✨ Features
+# ✨ Features
 
-- 🌡️ **Temperature Conversion**
-  - Celsius ↔ Fahrenheit
-  - Celsius ↔ Kelvin
-  - Fahrenheit ↔ Kelvin
+### 🌡️ Temperature Converter
+Convert between:
 
-- 📏 **Length Conversion**
-  - Inches ↔ Centimeters
+- Celsius ↔ Fahrenheit
+- Celsius ↔ Kelvin
+- Fahrenheit ↔ Kelvin
 
-- ⚖️ **Weight Conversion**
-  - Grams ↔ Pounds
+### 📏 Length Converter
 
-- 🌙 **Modern Dark Interface**
-  - Clean and minimal GUI design
+- Inches ↔ Centimeters
 
-- 🔄 **Unit Swapping**
-  - Swap source and target units instantly
+### ⚖️ Weight Converter
 
-- 🕘 **Conversion History**
-  - Automatically saves the last 10 conversions
-  - Uses JSON-based local storage
+- Grams ↔ Pounds
+
+---
+
+# 🚀 Additional Features
+
+- 🎨 **Modern GUI Design**
+  - Clean and minimal dark-themed interface
+  - Built using CustomTkinter components
+
+- 🔄 **Unit Swap**
+  - Instantly switch between input and output units
+
+- 💾 **Conversion History**
+  - Automatically stores recent conversions
+  - Saves last 10 conversions locally
+
+- 📂 **JSON Storage**
+  - Lightweight persistent storage system
 
 - ⌨️ **Keyboard Support**
-  - Press `Enter` for quick conversion
+  - Press `Enter` to convert quickly
 
-- ⚠️ **Error Handling**
-  - Handles invalid input and unsupported conversions gracefully
+- 🛡️ **Input Validation**
+  - Prevents invalid conversions and wrong inputs
+
+---
+
+# 📸 Application Preview
+
+<p align="center">
+  <img src="assets/Application Preview.png" width="600">
+</p>
+
+---
+
+# 🛠️ Tech Stack
+
+| Technology | Purpose |
+|----------|----------|
+| Python | Core programming language |
+| CustomTkinter | GUI development |
+| JSON | Data persistence |
+| pathlib | File handling |
+
+---
+
+# 📌 File Overview
+
+
+### main.py
+
+Application starting point.
+
+Responsibilities:
+
+- Initializes the application
+- Connects GUI with history system
+- Starts main event loop
 
 
 ---
 
-## 📸 Preview
+### gui.py
 
-```
-⚡ Dhinchak Converter
+Handles the graphical interface.
 
-🌡 Temperature | 📏 Length | ⚖ Weight
+Contains:
 
-FROM:
-[ 100 ] [ Celsius ▼ ]
+- Window design
+- Buttons
+- Input fields
+- Events
+- User interactions
 
-          ⇅
-
-TO:
-[ 212 ] [ Fahrenheit ▼ ]
-
-⚡ CONVERT
-
-
-History:
-100 Celsius → 212 Fahrenheit
-```
 
 ---
 
-# 🚀 Getting Started
+### converter.py
 
-## 1. Clone the Repository
+Core conversion engine.
+
+Contains:
+
+- Temperature formulas
+- Length formulas
+- Weight formulas
+- Conversion lookup system
+
+
+---
+
+### history.py
+
+Handles persistent storage.
+
+Contains:
+
+- Loading history
+- Saving conversions
+- Clearing records
+
+---
+
+# ⚙️ Installation Guide
+
+
+## 1. Clone Repository
 
 ```bash
 git clone https://github.com/youradi20/Dhinchak-Converter.git
 ```
 
-Move into the folder:
+Move into project:
 
 ```bash
 cd Dhinchak-Converter
@@ -80,7 +146,8 @@ cd Dhinchak-Converter
 
 ---
 
-## 2. Create a Virtual Environment
+## 2. Create Virtual Environment
+
 
 ### Windows
 
@@ -94,7 +161,8 @@ Activate:
 .venv\Scripts\activate
 ```
 
-### macOS/Linux
+
+### Linux / macOS
 
 ```bash
 python3 -m venv .venv
@@ -108,7 +176,7 @@ source .venv/bin/activate
 
 ---
 
-## 3. Install Dependencies
+## 3. Install Requirements
 
 ```bash
 pip install -r requirements.txt
@@ -124,119 +192,103 @@ python main.py
 
 ---
 
-# 📁 Project Structure
+# 🧠 Working Flow
 
-```
-Dhinchak-Converter/
-
-│
-├── main.py
-│
-├── gui.py
-│
-├── converter.py
-│
-├── history.py
-│
-├── history.json
-│
-├── requirements.txt
-├── LICENSE
-└── README.md
-```
-
-### File Responsibilities
-
-| File | Purpose |
-|-|-|
-| `main.py` | Application entry point and module connection |
-| `gui.py` | CustomTkinter interface and events |
-| `converter.py` | Unit conversion functions and conversion logic |
-| `history.py` | Handles saving/loading conversion history |
-| `history.json` | Stores recent conversions |
-
----
-
-# 🧠 How It Works
-
-The application follows a modular structure:
+The application follows a simple modular architecture:
 
 ```
 User Input
-     |
-     v
+
+     ↓
+
 CustomTkinter GUI
-     |
-     v
-Converter Engine
-     |
-     v
+
+     ↓
+
+Conversion Engine
+
+     ↓
+
 Result Display
-     |
-     v
+
+     ↓
+
 JSON History Storage
 ```
 
 ---
 
-# 🛠️ Tech Stack
-
-| Technology | Usage |
-|-|-|
-| Python | Core programming language |
-| CustomTkinter | Modern desktop GUI |
-| JSON | Persistent history storage |
-| pathlib | File management |
-
----
-
 # ⌨️ Controls
+
 
 | Action | Control |
 |-|-|
-| Convert | `⚡ CONVERT` button |
-| Quick Convert | Press `Enter` |
-| Swap Units | `⇅` button |
-| Clear History | `Clear` button |
+| Convert Value | ⚡ Convert Button |
+| Quick Convert | Press Enter |
+| Swap Units | ⇅ Button |
+| Remove History | Clear Button |
 
 ---
 
 # 🔮 Future Improvements
 
-Planned features:
+Planned upgrades:
 
 - ☀️ Light/Dark theme switch
+- 🖼️ Custom icons and images
 - 🔊 Voice output support
-- 📤 Export conversion report
-- 🖼️ Custom icons and branding
-- 📦 Executable application build
+- 📤 Export conversion history
+- 📦 Build executable application
+- ➕ More unit categories
 
 ---
 
 # 🤝 Contributing
 
-Contributions and suggestions are welcome.
+Contributions are welcome.
 
-Feel free to:
+To contribute:
 
-- Fork this repository
-- Create a new branch
-- Submit a pull request
+1. Fork the repository
+
+2. Create your feature branch
+
+```bash
+git checkout -b feature-name
+```
+
+3. Commit your changes
+
+```bash
+git commit -m "Added new feature"
+```
+
+4. Push your branch
+
+```bash
+git push origin feature-name
+```
+
+5. Open a Pull Request
 
 ---
 
 # 📜 License
 
-This project is licensed under the **MIT License**.
+This project is licensed under the **GNU Affero General Public License v3.0 (AGPL-3.0)**.
 
-See the `LICENSE` file for more information.
+You are free to use, modify, and distribute this software under the terms of the AGPL-3.0 license.
+
+Any modified versions distributed or provided over a network must also make their source code available under the same license.
+
+See the `LICENSE` file for complete license details.
 
 ---
 
 # ⭐ Support
 
-If you found this project helpful, consider giving it a ⭐ on GitHub.
+If you find this project useful, consider giving it a ⭐ on GitHub.
 
 ```
-Made with ❤️ using Python
+Built with ❤️ using Python
 ```
